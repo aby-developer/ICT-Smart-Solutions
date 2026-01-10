@@ -1,0 +1,156 @@
+import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
+import { FaWhatsapp, FaPhoneAlt, FaEnvelope, FaClock } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaYoutube, FaTiktok } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import emailjs from "emailjs-com";
+
+const Contact = () => {
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID",      // 🔁 replace
+        "YOUR_TEMPLATE_ID",     // 🔁 replace
+        e.target,
+        "YOUR_PUBLIC_KEY"       // 🔁 replace
+      )
+      .then(
+        () => {
+          alert("Message sent successfully!");
+          e.target.reset();
+        },
+        () => {
+          alert("Failed to send message. Try again.");
+        }
+      );
+  };
+
+  return (
+    <Container className="py-5 mt-5">
+      {/* Header */}
+      <div className="text-center mb-5">
+        <h1 className="fw-bold" style={{ color: "#1E3A8A" }}>
+          Contact Us
+        </h1>
+        <p className="text-muted">
+          We’re here to help you start your journey in technology.
+        </p>
+      </div>
+
+      <Row className="g-4">
+        {/* SEND MESSAGE */}
+        <Col md={6}>
+          <Card className="p-4 shadow-sm h-100">
+            <h4 className="fw-bold mb-3">Send Message</h4>
+
+            <Form onSubmit={sendEmail}>
+              <Form.Group className="mb-3">
+                <Form.Control type="text" name="name" placeholder="Full Name" required />
+              </Form.Group>
+
+              <Form.Group className="mb-3">
+                <Form.Control type="email" name="email" placeholder="Email Address" required />
+              </Form.Group>
+
+              <Form.Group className="mb-3">
+                <Form.Control type="text" name="subject" placeholder="Subject" required />
+              </Form.Group>
+
+              <Form.Group className="mb-3">
+                <Form.Control as="textarea" rows={4} name="message" placeholder="Message" required />
+              </Form.Group>
+
+              <Button
+                type="submit"
+                className="w-100"
+                style={{ backgroundColor: "#10B981", border: "none" }}
+              >
+                Send Message
+              </Button>
+            </Form>
+          </Card>
+        </Col>
+
+        {/* CONTACT INFO */}
+        <Col md={6}>
+          <Card
+            className="p-4 shadow-sm h-100 text-white"
+            style={{ backgroundColor: "#10B981" }}
+          >
+            <h4 className="fw-bold mb-4">Contact Information</h4>
+
+            {/* WhatsApp */}
+            <p>
+              <a
+                href="https://wa.me/250789402303"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white text-decoration-none"
+              >
+                <FaWhatsapp className="me-2" /> Chat on WhatsApp
+              </a>
+            </p>
+
+            {/* Location */}
+            <p>
+              <FaMapMarkerAlt className="me-2" />
+              Kigali - Kicukiro Sonatube - Inindi House (Former UTB University)
+            </p>
+
+            {/* Call */}
+            <p>
+              <a href="tel:+250789402303" className="text-white text-decoration-none">
+                <FaPhoneAlt className="me-2" /> +250 789 402 303
+              </a>
+            </p>
+
+            {/* Email */}
+            <p>
+              <a
+                href="mailto:edtechsolutions72@gmail.com"
+                className="text-white text-decoration-none"
+              >
+                <FaEnvelope className="me-2" /> edtechsolutions72@gmail.com
+              </a>
+            </p>
+
+            {/* Office Hours */}
+            <p>
+              <FaClock className="me-2" /> Mon - Fri: 8AM - 5PM
+            </p>
+
+            {/* Social Media */}
+            <div className="mt-4">
+              <h6 className="fw-bold">Follow Us</h6>
+              <div className="d-flex gap-3 mt-2">
+                <a href="#" className="text-white"><FaInstagram size={22} /></a>
+                <a href="#" className="text-white"><FaLinkedin size={22} /></a>
+                <a href="#" className="text-white"><FaYoutube size={22} /></a>
+                <a href="#" className="text-white"><FaTiktok size={22} /></a>
+                <a href="#" className="text-white"><FaXTwitter size={22} /></a>
+              </div>
+              <p className="mt-2 fw-semibold">Ed Tech Training Center</p>
+            </div>
+          </Card>
+        </Col>
+      </Row>
+
+      {/* MAP */}
+      <div className="mt-5 shadow-sm rounded overflow-hidden">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.4690906048304!2d30.100819776001977!3d-1.966278936749529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca79bea85f843%3A0x10e9fa9ee8d8da4e!2sEdTech%20Solutions%20Ltd!5e0!3m2!1sen!2srw!4v1768047371919!5m2!1sen!2srw"
+          width="100%"
+          height="450"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </Container>
+  );
+};
+
+export default Contact;
