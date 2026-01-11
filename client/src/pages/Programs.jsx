@@ -56,10 +56,10 @@ const courses = [
 ];
 
 const services = [
-  { title: "Teacher Training Programs", icon: <FaChalkboardTeacher size={28} color="#10B981" />, description: "Enhance ICT skills for educators.", image: "/images/teacher-training.png" },
-  { title: "Holiday Programs", icon: <FaLaptopCode size={28} color="#10B981" />, description: "Engaging tech programs for students during holidays.", image: "/images/holiday-program.png" },
-  { title: "Technical Support", icon: <FaHeadset size={28} color="#10B981" />, description: "Provide IT support for schools & institutions.", image: "/images/technical-support.png" },
-  { title: "Supplying ICT Peripherals", icon: <FaTools size={28} color="#10B981" />, description: "High-quality ICT equipment and accessories.", image: "/images/ict-supply.png" },
+  { title: "Teacher Training Programs", icon: <FaChalkboardTeacher size={28} color="#10B981" />, description: "Enhance ICT skills for educators.", image: "/images/tt.png" },
+  { title: "Holiday Programs", icon: <FaLaptopCode size={28} color="#10B981" />, description: "Engaging tech programs for students during holidays.", image: "/images/holiday.png" },
+  { title: "Technical Support", icon: <FaHeadset size={28} color="#10B981" />, description: "Provide IT support for schools & institutions.", image: "/images/technical.png" },
+  { title: "Supplying ICT Peripherals", icon: <FaTools size={28} color="#10B981" />, description: "High-quality ICT equipment and accessories.", image: "/images/ict.png" },
 ];
 
 const Programs = () => {
@@ -136,7 +136,7 @@ const Programs = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
         className="text-center mt-5 py-5"
-        style={{ backgroundColor: "#F9FAFB", borderRadius: "12px" }}
+        style={{ backgroundColor: "#addcd5", borderRadius: "12px" }}
       >
         <h2 style={{ color: "#1E3A8A", fontWeight: "700" }}>Ready To Start Your Journey in Technology?</h2>
         <p style={{ color: "#14B8A6", fontSize: "1.2rem" }}>

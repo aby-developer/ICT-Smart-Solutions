@@ -66,3 +66,23 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+body.dark-mode {
+  background-color: #121226;
+  color: #ffffff;
+}
+
+body.dark-mode a {
+  color: #ffffff;
+}
+
+body.dark-mode .card {
+  background-color: #1e1e2f;
+  color: #fff;
+}
+
+body.dark-mode .btn-light {
+  background-color: #33334d;
+  color: #fff;
+  border: none;
+}

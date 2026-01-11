@@ -4,6 +4,7 @@ import { FaInstagram, FaLinkedin, FaYoutube, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import emailjs from "emailjs-com";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const sendEmail = (e) => {
@@ -149,7 +150,27 @@ const Contact = () => {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
+
+      {/* Ready to Start Section */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mt-5 py-5"
+              style={{ backgroundColor: "#96eae1", borderRadius: "12px" }}
+            >
+              <h2 style={{ color: "#1E3A8A", fontWeight: "700" }}>Ready To Start Your Journey in Technology?</h2>
+              <p style={{ color: "#14B8A6", fontSize: "1.2rem" }}>
+                <span style={{ textDecoration: "line-through", marginRight: "10px" }}>45000 FRW</span>
+                <span style={{ fontWeight: "700" }}>30000 FRW</span>
+              </p>
+              <Button href="/apply" style={{ backgroundColor: "#10B981", border: "none", padding: "12px 30px", fontSize: "1.1rem" }}>
+                Apply Now
+              </Button>
+            </motion.div>
     </Container>
+
+    
   );
 };
 
