@@ -4,7 +4,12 @@ import {
   getAllApplications,
   updateApplicationStatus,
   getAllMessages,
-  markMessageRead
+  markMessageRead,
+  deleteApplication,
+  deleteMessage,
+  getAdminProfile,
+  updateAdminInfo,
+  changeAdminPassword
 } from "../controllers/adminDashboardController.js";
 
 import { protectAdmin } from "../middleware/authMiddleware.js";
@@ -17,9 +22,15 @@ router.get("/dashboard", protectAdmin, getDashboardStats);
 // Applications
 router.get("/applications", protectAdmin, getAllApplications);
 router.patch("/applications/:id", protectAdmin, updateApplicationStatus);
+router.delete("/applications/:id", protectAdmin, deleteApplication);
 
 // Messages
 router.get("/messages", protectAdmin, getAllMessages);
 router.patch("/messages/:id/read", protectAdmin, markMessageRead);
+router.delete("/messages/:id", protectAdmin, deleteMessage);
 
+// ADMIN PROFILE
+router.get("/profile", protectAdmin, getAdminProfile);
+router.patch("/profile", protectAdmin, updateAdminInfo);
+router.patch("/change-password", protectAdmin, changeAdminPassword);
 export default router;

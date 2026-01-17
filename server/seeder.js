@@ -9,7 +9,7 @@ connectDB();
 
 const seedAdmin = async () => {
   try {
-    const exists = await Admin.findOne({ email: "admin@example.com" });
+    const exists = await Admin.findOne({ email: "abyzone01@gmail.com" });
     if (exists) {
       console.log("Admin already exists");
       process.exit();
