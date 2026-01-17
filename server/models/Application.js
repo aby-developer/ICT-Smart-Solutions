@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 const applicationSchema = new mongoose.Schema(
   {
     fullName: { type: String, required: true, trim: true },
@@ -11,4 +11,4 @@ const applicationSchema = new mongoose.Schema(
 );
 
 
-module.exports = mongoose.model("Application", applicationSchema);
+export const Application = mongoose.model("Application", applicationSchema);

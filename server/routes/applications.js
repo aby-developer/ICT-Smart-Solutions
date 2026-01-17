@@ -1,6 +1,9 @@
-const express = require("express");
+import express from "express";
+import { Application } from "../models/Application.js"; // ✅ use curly braces for named export
+
 const router = express.Router();
-const Application = require("../models/Application");
+
+
 
 // Define fees for each program
 const programFees = {
@@ -49,4 +52,4 @@ router.post("/", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;
