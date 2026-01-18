@@ -1,71 +1,92 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+/* ===== Public Components ===== */
 import AppNavbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
 import LocationNotification from "./components/LocationNotification";
+import WhatsAppButton from "./components/WhatsAppButton";
+import ScrollToTopButton from "./components/ScrollToTopButton";
+
+/* ===== Public Pages ===== */
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Programs from "./pages/Programs";
 import Contact from "./pages/Contact";
 import Apply from "./pages/Apply";
 import NotFound from "./pages/NotFound";
-import WhatsAppButton from "./components/WhatsAppButton";
-import ScrollToTopButton from "./components/ScrollToTopButton";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
 
+/* ===== Admin ===== */
 import ProtectedRoute from "./components/ProtectedRoute";
+import AdminLayout from "./pages/Admin/AdminLayout";
 
-import AdminLogin from "./pages/admin/AdminLogin";
+import AdminLogin from "./pages/Admin/AdminLogin";
 import Dashboard from "./pages/admin/Dashboard";
 import Applications from "./pages/admin/Applications";
 import Messages from "./pages/admin/Messages";
 import Profile from "./pages/admin/Profile";
 import Settings from "./pages/admin/Settings";
 
-
+/* ===== Styles ===== */
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./assets/admin.css";
 
 function App() {
   return (
     <Router>
-      <AppNavbar />
-      <LocationNotification /> {/* Location notification visible on all pages */}
-      <WhatsAppButton />
-      <ScrollToTopButton />
-      <main style={{ marginTop: "80px" }}> {/* Add margin to avoid navbar overlap */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/programs" element={<Programs />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/apply" element={<Apply />} />
-          <Route
-  path="/admin/settings"
+      <Routes>
+
+        {/* ================= PUBLIC WEBSITE ================= */}
+        <Route
+          path="/*"
+          element={
+            <>
+              <AppNavbar />
+              <LocationNotification />
+              <WhatsAppButton />
+              <ScrollToTopButton />
+
+              <main style={{ marginTop: "80px" }}>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/programs" element={<Programs />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/apply" element={<Apply />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </main>
+
+              <Footer />
+            </>
+          }
+        />
+
+        {/* ================= ADMIN AUTH ================= */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+
+        {/* ================= ADMIN PANEL ================= */}
+        <Route
+  path="/admin/dashboard"
   element={
     <ProtectedRoute>
-      <Settings />
+      <AdminLayout>
+        <Dashboard />
+      </AdminLayout>
     </ProtectedRoute>
   }
 />
 
-          <Route path="*" element={<NotFound />} />
-          {/* Admin Login */}
-        <Route path="/admin/login" element={<AdminLogin />} />
 
-        {/* Protected Admin Routes */}
-        <Route
-          path="/admin/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
+  
 
         <Route
           path="/admin/applications"
           element={
             <ProtectedRoute>
-              <Applications />
+              <AdminLayout>
+                <Applications />
+              </AdminLayout>
             </ProtectedRoute>
           }
         />
@@ -74,7 +95,9 @@ function App() {
           path="/admin/messages"
           element={
             <ProtectedRoute>
-              <Messages />
+              <AdminLayout>
+                <Messages />
+              </AdminLayout>
             </ProtectedRoute>
           }
         />
@@ -83,15 +106,25 @@ function App() {
           path="/admin/profile"
           element={
             <ProtectedRoute>
-              <Profile />
+              <AdminLayout>
+                <Profile />
+              </AdminLayout>
             </ProtectedRoute>
           }
         />
 
-        </Routes>
-      </main>
+        <Route
+          path="/admin/settings"
+          element={
+            <ProtectedRoute>
+              <AdminLayout>
+                <Settings />
+              </AdminLayout>
+            </ProtectedRoute>
+          }
+        />
 
-      <Footer /> {/* Footer visible on all pages */}
+      </Routes>
     </Router>
   );
 }

@@ -86,3 +86,40 @@ body.dark-mode .btn-light {
   color: #fff;
   border: none;
 }
+
+
+.dashboard-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.admin-navbar {
+  height: 65px;
+  z-index: 1050;
+}
+
+.admin-search {
+  background: #f5f7fa;
+  padding: 6px 12px;
+  border-radius: 8px;
+  max-width: 350px;
+  width: 100%;
+}
+
+.notification-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background: #dc3545;
+  border-radius: 50%;
+}
+
+.admin-content {
+  padding-top: 80px;
+}

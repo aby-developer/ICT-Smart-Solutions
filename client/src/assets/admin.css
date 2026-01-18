@@ -1,0 +1,22 @@
+.admin-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.admin-main {
+  flex: 1;
+  margin-left: 240px; /* sidebar width */
+  background: #f4f6f9;
+}
+
+.admin-content {
+  padding: 25px;
+  padding-top: 90px; /* space for navbar */
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .admin-main {
+    margin-left: 0;
+  }
+}
