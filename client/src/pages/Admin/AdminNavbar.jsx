@@ -55,9 +55,9 @@ const AdminNavbar = () => {
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item onClick={() => navigate("/admin/profile")}>
+              {/* <Dropdown.Item onClick={() => navigate("/admin/profile")}>
                 Profile
-              </Dropdown.Item>
+              </Dropdown.Item> */}
               <Dropdown.Divider />
               <Dropdown.Item onClick={handleLogout} className="text-danger">
                 Logout

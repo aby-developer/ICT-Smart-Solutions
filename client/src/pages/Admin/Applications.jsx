@@ -239,8 +239,8 @@ const Applications = () => {
       "Networking & Internet Technology": "#3a0ca3",
       "Computer Systems and Architecture": "#f72585",
       "Multimedia Productions": "#4cc9f0",
-      "Electronics & Telecommunication": "#7209b7",
-      "Electrical Technology": "#4895ef"
+      "Electronics & Telecommunication": "#7209b7"
+      
     };
     
     for (const [key, color] of Object.entries(colors)) {

@@ -80,7 +80,7 @@ const Apply = () => {
                 Apply Now
               </h1>
               <p className="lead text-muted mb-0">
-                Start your tech journey with <span className="fw-bold" style={{ color: "#10B981" }}>Ed Tech Solutions</span>
+                Start your tech journey with <span className="fw-bold" style={{ color: "#10B981" }}>ICT Smart Solutions</span>
               </p>
             </motion.div>
           </Col>
@@ -120,7 +120,7 @@ const Apply = () => {
                     style={{ backgroundColor: "rgba(255,255,255,0.1)" }}>
                     <div className="d-flex justify-content-center align-items-center mb-2">
                       <span className="text-light fs-4 me-3" style={{ opacity: 0.8 }}>
-                        <del>45,000 FRW</del>
+                        <del>40,000 FRW</del>
                       </span>
                       <span className="fw-bold display-5">
                         30,000 FRW
@@ -165,7 +165,7 @@ const Apply = () => {
                       <FaPhoneAlt className="me-2 text-warning" />
                       <div>
                         <p className="mb-1 fw-bold">Call before paying:</p>
-                        <h5 className="mb-0 text-warning">0789 402 303</h5>
+                        <h5 className="mb-0 text-warning">0788 467 037</h5>
                       </div>
                     </div>
                   </div>
@@ -370,7 +370,7 @@ const Apply = () => {
                 <div className="p-3 rounded-3 bg-light">
                   <p className="mb-2">
                     <FaPhoneAlt className="me-2 text-primary" />
-                    Questions? Call us: <strong>0789 402 303</strong>
+                    Questions? Call us: <strong>0788 467 037</strong>
                   </p>
                   <p className="mb-0 small text-muted">
                     We're available Monday-Friday, 8 AM - 6 PM

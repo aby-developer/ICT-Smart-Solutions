@@ -121,7 +121,7 @@ const Contact = () => {
 
             <p>
               <FaMapMarkerAlt className="me-2" />
-              Kigali - Kicukiro Sonatube - Inindi House
+              Kigali Nyarugenge - Near Bank Of Kigali Headquarter
             </p>
 
             <p>
@@ -129,7 +129,7 @@ const Contact = () => {
                 href="tel:+250789402303"
                 className="text-white text-decoration-none"
               >
-                <FaPhoneAlt className="me-2" /> +250 789 402 303
+                <FaPhoneAlt className="me-2" /> +250 788 467 037
               </a>
             </p>
 
@@ -138,7 +138,7 @@ const Contact = () => {
                 href="mailto:edtechsolutions72@gmail.com"
                 className="text-white text-decoration-none"
               >
-                <FaEnvelope className="me-2" /> edtechsolutions72@gmail.com
+                <FaEnvelope className="me-2" /> ictsmartsolutions72@gmail.com
               </a>
             </p>
 
@@ -184,7 +184,7 @@ const Contact = () => {
             >
               <h2 style={{ color: "#1E3A8A", fontWeight: "700" }}>Ready To Start Your Journey in Technology?</h2>
               <p style={{ color: "#14B8A6", fontSize: "1.2rem" }}>
-                <span style={{ textDecoration: "line-through", marginRight: "10px" }}>45000 FRW</span>
+                <span style={{ textDecoration: "line-through", marginRight: "10px" }}>40000 FRW</span>
                 <span style={{ fontWeight: "700" }}>30000 FRW</span>
               </p>
               <Button href="/apply" style={{ backgroundColor: "#10B981", border: "none", padding: "12px 30px", fontSize: "1.1rem" }}>

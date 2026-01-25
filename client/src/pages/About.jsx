@@ -55,7 +55,7 @@ const About = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <h1 className="fw-bold display-5">About Ed Tech Solutions</h1>
+            <h1 className="fw-bold display-5">About ICT Smart Solutions</h1>
             <p className="lead mt-3" style={{ fontSize: "1.2rem", fontStyle: "italic" }}>
               Innovating ICT learning for the future
             </p>
@@ -123,7 +123,7 @@ const About = () => {
             <Col sm={4} className="mb-4">
               <Card className="border-0 shadow-sm py-4">
                 <Card.Body>
-                  <h3 className="fw-bold" style={{ color: "#10B981" }}>500+</h3>
+                  <h3 className="fw-bold" style={{ color: "#10B981" }}>400+</h3>
                   <p className="text-muted">Students Trained</p>
                 </Card.Body>
               </Card>
@@ -131,7 +131,7 @@ const About = () => {
             <Col sm={4} className="mb-4">
               <Card className="border-0 shadow-sm py-4">
                 <Card.Body>
-                  <h3 className="fw-bold" style={{ color: "#10B981" }}>8+</h3>
+                  <h3 className="fw-bold" style={{ color: "#10B981" }}>4+</h3>
                   <p className="text-muted">Programs Offered</p>
                 </Card.Body>
               </Card>

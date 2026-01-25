@@ -17,12 +17,7 @@ export const courses = [
     description: "Understand computer hardware, OS, and system architecture.",
     duration: "6 Months"
   },
-  {
-    code: "ELT",
-    title: "Electrical Technology",
-    description: "Practical electrical installation and maintenance skills.",
-    duration: "6 Months"
-  },
+  
   {
     code: "ETE",
     title: "Electronics & Telecommunications",
