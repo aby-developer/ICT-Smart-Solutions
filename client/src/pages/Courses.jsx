@@ -1,7 +1,7 @@
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 
 const courses = [
-  "Electrical Technology (ELT)",
+  
   "Software Development (SOD)",
   "Computer Systems & Architecture (CSA)",
   "Networking & Internet Technology (NIT)",

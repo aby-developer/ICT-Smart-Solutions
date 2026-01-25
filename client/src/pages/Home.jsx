@@ -68,14 +68,7 @@ const programs = [
     topics: ["Circuits", "Signals", "Communication"],
     color: "#14B8A6"
   },
-  {
-    title: "Electrical Technology (ELT)",
-    shortTitle: "Electrical",
-    icon: <FaBolt />,
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-    topics: ["Wiring", "Safety", "Installations"],
-    color: "#0F766E"
-  },
+  
   {
     title: "Teacher Training Program",
     shortTitle: "Teacher Training",
@@ -104,9 +97,9 @@ const programs = [
 
 const testimonials = [
   {
-    name: "MASENGESHO Henriette",
+    name: "NDATIMANA David Ombeni",
     program: "L5SOD - Software Development",
-    shortProgram: "Software Dev",
+    shortProgram: "Software Development",
     image: "/testimonials/henriette.jpg",
     quote: "The hands-on approach gave me real development experience. I built 3 complete projects that impressed my employers!",
     rating: 5,
@@ -114,8 +107,8 @@ const testimonials = [
     location: "Kigali, Rwanda"
   },
   {
-    name: "DUKUNDANE NGABO Richard",
-    program: "L5CSA - Computer Systems & Architecture",
+    name: "ABIMANA Yves",
+    program: "L5SOD - Software Development",
     shortProgram: "Computer Systems",
     image: "/testimonials/richard.jpg",
     quote: "Practical hardware training was exactly what I needed. I can now troubleshoot and assemble systems confidently.",
@@ -124,7 +117,7 @@ const testimonials = [
     location: "Ruhango, Rwanda"
   },
   {
-    name: "KAGABO Pascal",
+    name: "ISHIMWE Tona Miguel",
     program: "L5SOD - Software Development",
     shortProgram: "Software Dev",
     image: "/testimonials/pascal.jpg",
@@ -134,14 +127,14 @@ const testimonials = [
     location: "Kigali, Rwanda"
   },
   {
-    name: "ABIMANA Yves",
+    name: "HATEGEKIMANA Lucky Bruce",
     program: "L5SOD - Software Development",
     shortProgram: "Software Dev",
     image: "/testimonials/alice.jpg",
     quote: "The creative tools and techniques I learned opened doors to freelance opportunities I never imagined possible.",
     rating: 5,
     color: "#0D9488",
-    location: "Muhanga, Rwanda"
+    location: "Kigali, Rwanda"
   }
 ];
 

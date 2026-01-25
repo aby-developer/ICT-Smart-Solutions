@@ -45,22 +45,22 @@ const courses = [
     studies: ["Circuit Design", "Signals & Communication", "IoT Basics"],
     duration: "1 Month"
   },
-  {
-    title: "Electrical Technology (ELT)",
-    icon: <FaBolt size={28} color="#10B981" />,
-    image: "/images/elt.png",
-    description: "Learn electrical installations and power systems.",
-    studies: ["Power Systems", "Electrical Machines", "Safety & Regulations"],
-    duration: "1 Month"
-  },
+  // {
+  //   title: "Electrical Technology (ELT)",
+  //   icon: <FaBolt size={28} color="#10B981" />,
+  //   image: "/images/elt.png",
+  //   description: "Learn electrical installations and power systems.",
+  //   studies: ["Power Systems", "Electrical Machines", "Safety & Regulations"],
+  //   duration: "1 Month"
+  // },
 ];
 
-const services = [
-  { title: "Teacher Training Programs", icon: <FaChalkboardTeacher size={28} color="#10B981" />, description: "Enhance ICT skills for educators.", image: "/images/tt.png" },
-  { title: "Holiday Programs", icon: <FaLaptopCode size={28} color="#10B981" />, description: "Engaging tech programs for students during holidays.", image: "/images/holiday.png" },
-  { title: "Technical Support", icon: <FaHeadset size={28} color="#10B981" />, description: "Provide IT support for schools & institutions.", image: "/images/technical.png" },
-  { title: "Supplying ICT Peripherals", icon: <FaTools size={28} color="#10B981" />, description: "High-quality ICT equipment and accessories.", image: "/images/ict.png" },
-];
+// const services = [
+//   { title: "Teacher Training Programs", icon: <FaChalkboardTeacher size={28} color="#10B981" />, description: "Enhance ICT skills for educators.", image: "/images/tt.png" },
+//   { title: "Holiday Programs", icon: <FaLaptopCode size={28} color="#10B981" />, description: "Engaging tech programs for students during holidays.", image: "/images/holiday.png" },
+//   { title: "Technical Support", icon: <FaHeadset size={28} color="#10B981" />, description: "Provide IT support for schools & institutions.", image: "/images/technical.png" },
+//   { title: "Supplying ICT Peripherals", icon: <FaTools size={28} color="#10B981" />, description: "High-quality ICT equipment and accessories.", image: "/images/ict.png" },
+// ];
 
 const Programs = () => {
   return (
@@ -140,7 +140,7 @@ const Programs = () => {
       >
         <h2 style={{ color: "#1E3A8A", fontWeight: "700" }}>Ready To Start Your Journey in Technology?</h2>
         <p style={{ color: "#14B8A6", fontSize: "1.2rem" }}>
-          <span style={{ textDecoration: "line-through", marginRight: "10px" }}>45000 FRW</span>
+          <span style={{ textDecoration: "line-through", marginRight: "10px" }}>40000 FRW</span>
           <span style={{ fontWeight: "700" }}>30000 FRW</span>
         </p>
         <Button href="/apply" style={{ backgroundColor: "#10B981", border: "none", padding: "12px 30px", fontSize: "1.1rem" }}>

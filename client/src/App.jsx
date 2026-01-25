@@ -20,11 +20,11 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import AdminLayout from "./pages/Admin/AdminLayout";
 
 import AdminLogin from "./pages/Admin/AdminLogin";
-import Dashboard from "./pages/admin/Dashboard";
-import Applications from "./pages/admin/Applications";
-import Messages from "./pages/admin/Messages";
-import Profile from "./pages/admin/Profile";
-import Settings from "./pages/admin/Settings";
+import Dashboard from "./pages/Admin/Dashboard";
+import Applications from "./pages/Admin/Applications";
+import Messages from "./pages/Admin/Messages";
+import Profile from "./pages/Admin/Profile";
+import Settings from "./pages/Admin/Settings";
 
 /* ===== Styles ===== */
 import "slick-carousel/slick/slick.css";
