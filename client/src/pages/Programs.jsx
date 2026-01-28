@@ -1,153 +1,710 @@
 import React from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { FaLaptopCode, FaNetworkWired, FaMicrochip, FaVideo, FaBolt, FaTools, FaChalkboardTeacher, FaHeadset } from "react-icons/fa";
+import { Container, Row, Col, Card, Button, Badge } from "react-bootstrap";
+import { 
+  FaLaptopCode, 
+  FaNetworkWired, 
+  FaMicrochip, 
+  FaPhotoVideo, 
+  FaBolt, 
+  FaTools, 
+  FaChalkboardTeacher, 
+  FaCalendarAlt,
+  FaClock,
+  FaUsers,
+  FaGraduationCap,
+  FaRocket,
+  FaCheckCircle,
+  FaHandshake,
+  FaDesktop,
+  FaBookOpen,
+  FaCertificate
+} from "react-icons/fa";
 import { motion } from "framer-motion";
 
-// Replace with your own course images in /public/images/
-const courses = [
+// Use the same color scheme
+const colors = {
+  primary: "#1A56DB",     // Modern Blue
+  secondary: "#F59E0B",   // Amber/Orange
+  accent: "#7C3AED",      // Purple for highlights
+  dark: "#1E3A8A",        // Dark Blue
+  light: "#F0F9FF",       // Light Blue background
+  success: "#10B981",     // Emerald Green
+  warning: "#FBBF24",     // Yellow
+  info: "#3B82F6",        // Light Blue
+  gray: "#6B7280",        // Gray
+  lightGray: "#F9FAFB",   // Light Gray
+  darkGray: "#374151",    // Dark Gray
+  teal: "#0D9488"         // Teal for variety
+};
+
+const programs = [
   {
     title: "Software Development (SOD)",
-    icon: <FaLaptopCode size={28} color="#10B981" />,
-    image: "/images/sod.png",
-    description: "Learn to build web and mobile applications.",
-    studies: ["HTML, CSS & JavaScript", "React & Node.js", "Databases & Deployment"],
-    duration: "1 Month"
+    icon: <FaLaptopCode />,
+    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    description: "Learn full-stack web development with modern frameworks and build real-world applications.",
+    topics: ["HTML, CSS & JavaScript", "React & Next.js", "Node.js & Express", "MongoDB & PostgreSQL", "API Development", "Deployment & DevOps"],
+    duration: "4 Weeks",
+    level: "Beginner to Advanced",
+    color: colors.primary,
+    requirements: ["Basic computer knowledge", "Laptop required", "Internet access"],
+    outcome: "Full-stack developer capable of building complete web applications"
   },
   {
     title: "Computer Systems & Architecture (CSA)",
-    icon: <FaMicrochip size={28} color="#10B981" />,
-    image: "/images/csa.png",
-    description: "Understand how computers work from hardware to software.",
-    studies: ["CPU & Memory", "Operating Systems", "Assembly & Logic Design"],
-    duration: "1 Month"
+    icon: <FaMicrochip />,
+    image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    description: "Understand computer hardware fundamentals, system assembly, and troubleshooting techniques.",
+    topics: ["Computer Hardware Basics", "CPU & Memory Architecture", "Motherboard & Components", "System Assembly", "Troubleshooting", "Maintenance"],
+    duration: "3 Weeks",
+    level: "Beginner",
+    color: colors.secondary,
+    requirements: ["Interest in hardware", "Basic tools (optional)", "No prior experience needed"],
+    outcome: "Certified computer technician with practical repair skills"
   },
   {
     title: "Networking & Internet Technology (NIT)",
-    icon: <FaNetworkWired size={28} color="#10B981" />,
-    image: "/images/nit.png",
-    description: "Learn how to design, build and manage networks.",
-    studies: ["LAN & WAN", "Routers & Switches", "Network Security"],
-    duration: "1 Month"
+    icon: <FaNetworkWired />,
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    description: "Master network design, implementation, and security for modern IT infrastructure.",
+    topics: ["Network Fundamentals", "LAN/WAN Setup", "Router & Switch Configuration", "IP Addressing", "Network Security", "Wireless Networking"],
+    duration: "4 Weeks",
+    level: "Intermediate",
+    color: colors.accent,
+    requirements: ["Basic IT knowledge", "Network hardware access", "Analytical thinking"],
+    outcome: "Network administrator with practical configuration skills"
   },
   {
     title: "Multimedia Productions (MMP)",
-    icon: <FaVideo size={28} color="#10B981" />,
-    image: "/images/mmp.png",
-    description: "Create stunning multimedia content for digital platforms.",
-    studies: ["Video Editing", "Graphic Design", "Animation"],
-    duration: "1 Month"
+    icon: <FaPhotoVideo />,
+    image: "https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    description: "Create stunning visual content with professional graphic design and video editing skills.",
+    topics: ["Adobe Photoshop", "Adobe Premiere Pro", "Graphic Design Principles", "Video Editing", "Digital Marketing", "Branding"],
+    duration: "3 Weeks",
+    level: "Beginner",
+    color: colors.success,
+    requirements: ["Creative mindset", "Basic computer skills", "Design software access"],
+    outcome: "Multimedia designer capable of professional visual content creation"
   },
   {
     title: "Electronics & Telecommunications (ETE)",
-    icon: <FaBolt size={28} color="#10B981" />,
-    image: "/images/ete.png",
-    description: "Dive into electronics circuits and telecom systems.",
-    studies: ["Circuit Design", "Signals & Communication", "IoT Basics"],
-    duration: "1 Month"
+    icon: <FaBolt />,
+    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    description: "Explore electronic circuits, communication systems, and modern telecommunications technology.",
+    topics: ["Basic Electronics", "Circuit Design", "Signal Processing", "Communication Systems", "IoT Basics", "Troubleshooting"],
+    duration: "4 Weeks",
+    level: "Intermediate",
+    color: colors.warning,
+    requirements: ["Basic physics knowledge", "Interest in electronics", "Analytical skills"],
+    outcome: "Electronics technician with practical circuit design skills"
   },
-  // {
-  //   title: "Electrical Technology (ELT)",
-  //   icon: <FaBolt size={28} color="#10B981" />,
-  //   image: "/images/elt.png",
-  //   description: "Learn electrical installations and power systems.",
-  //   studies: ["Power Systems", "Electrical Machines", "Safety & Regulations"],
-  //   duration: "1 Month"
-  // },
+  {
+    title: "Teacher Training Program",
+    icon: <FaChalkboardTeacher />,
+    image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    description: "Enhance teaching skills with modern ICT tools and effective digital classroom strategies.",
+    topics: ["ICT Pedagogy", "Digital Teaching Tools", "Curriculum Development", "Classroom Management", "Assessment Strategies", "E-Learning Platforms"],
+    duration: "2 Weeks",
+    level: "Professional",
+    color: colors.teal,
+    requirements: ["Teaching experience", "Basic computer skills", "Educational background"],
+    outcome: "ICT-enabled educator with modern teaching methodologies"
+  },
+  {
+    title: "Holiday Tech Program",
+    icon: <FaCalendarAlt />,
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    description: "Fun and engaging tech exploration for students during school holidays.",
+    topics: ["Basic Coding", "Creative Projects", "Tech Exploration", "Game Development", "Digital Art", "Presentation Skills"],
+    duration: "2 Weeks",
+    level: "Beginner",
+    color: colors.info,
+    requirements: ["Student status", "Curiosity for tech", "No prior experience needed"],
+    outcome: "Digital literacy and foundational tech skills for students"
+  },
+  {
+    title: "Technical Support & ICT Supply",
+    icon: <FaTools />,
+    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+    description: "Learn IT support skills and understand ICT equipment supply chain management.",
+    topics: ["IT Troubleshooting", "System Maintenance", "Hardware Support", "ICT Equipment", "Supply Chain Basics", "Customer Service"],
+    duration: "3 Weeks",
+    level: "Intermediate",
+    color: colors.gray,
+    requirements: ["Basic IT knowledge", "Problem-solving skills", "Customer service mindset"],
+    outcome: "IT support specialist with equipment management skills"
+  },
 ];
 
-// const services = [
-//   { title: "Teacher Training Programs", icon: <FaChalkboardTeacher size={28} color="#10B981" />, description: "Enhance ICT skills for educators.", image: "/images/tt.png" },
-//   { title: "Holiday Programs", icon: <FaLaptopCode size={28} color="#10B981" />, description: "Engaging tech programs for students during holidays.", image: "/images/holiday.png" },
-//   { title: "Technical Support", icon: <FaHeadset size={28} color="#10B981" />, description: "Provide IT support for schools & institutions.", image: "/images/technical.png" },
-//   { title: "Supplying ICT Peripherals", icon: <FaTools size={28} color="#10B981" />, description: "High-quality ICT equipment and accessories.", image: "/images/ict.png" },
-// ];
+const services = [
+  {
+    title: "Custom Training Solutions",
+    icon: <FaHandshake />,
+    description: "Tailored ICT training programs for organizations and institutions",
+    color: colors.primary,
+    benefits: ["Custom curriculum", "Flexible scheduling", "Industry-specific content"]
+  },
+  {
+    title: "ICT Equipment Supply",
+    icon: <FaDesktop />,
+    description: "Quality computer hardware, peripherals, and networking equipment",
+    color: colors.secondary,
+    benefits: ["Genuine products", "Warranty support", "Bulk discounts"]
+  },
+  {
+    title: "Technical Consultancy",
+    icon: <FaBookOpen />,
+    description: "Expert advice on ICT infrastructure and digital transformation",
+    color: colors.accent,
+    benefits: ["Expert guidance", "Cost optimization", "Future-proof solutions"]
+  },
+  {
+    title: "Certification Programs",
+    icon: <FaCertificate />,
+    description: "Industry-recognized certification courses and assessments",
+    color: colors.success,
+    benefits: ["Global recognition", "Skill validation", "Career advancement"]
+  },
+];
 
 const Programs = () => {
   return (
-    <Container style={{ paddingTop: "120px", paddingBottom: "80px" }}>
-      {/* Header */}
-      <motion.div
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="text-center mb-5"
+    <>
+      {/* HERO SECTION */}
+      <section
+        className="d-flex align-items-center position-relative overflow-hidden"
+        style={{
+          minHeight: "40vh",
+          background: `linear-gradient(135deg, ${colors.dark}, ${colors.primary})`,
+          color: "white",
+          textAlign: "center",
+          paddingTop: "100px",
+          paddingBottom: "60px"
+        }}
       >
-        <h1 style={{ color: "#1E3A8A", fontWeight: "700" }}>Available Trainings & Internship Programs</h1>
-        <p style={{ color: "#14B8A6", fontSize: "1.1rem" }}>Empowering learners with ICT skills for the future</p>
-      </motion.div>
+        {/* Background Pattern */}
+        <div className="position-absolute top-0 start-0 w-100 h-100"
+          style={{
+            backgroundImage: `radial-gradient(circle at 20% 50%, ${colors.secondary}15 0%, transparent 50%),
+                             radial-gradient(circle at 80% 20%, ${colors.accent}10 0%, transparent 50%)`,
+            opacity: 0.4
+          }}
+        />
+        
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="position-relative z-1"
+          >
+            <h1 className="fw-bold display-4 mb-3">
+              Our <span style={{ color: colors.secondary }}>Training Programs</span>
+            </h1>
+            <p className="lead mb-4" style={{ 
+              fontSize: "1.3rem", 
+              maxWidth: "700px",
+              margin: "0 auto",
+              opacity: 0.9
+            }}>
+              Choose from 8 specialized ICT programs designed for career success and practical skill development
+            </p>
+            <div className="d-flex justify-content-center gap-3">
+              <Badge bg="light" text="dark" className="px-3 py-2">
+                <FaUsers className="me-2" />
+                500+ Students Trained
+              </Badge>
+              <Badge bg="light" text="dark" className="px-3 py-2">
+                <FaGraduationCap className="me-2" />
+                95% Job Placement
+              </Badge>
+              <Badge bg="light" text="dark" className="px-3 py-2">
+                <FaClock className="me-2" />
+                4 Weeks Average Duration
+              </Badge>
+            </div>
+          </motion.div>
+        </Container>
+      </section>
 
-      {/* Section 1: Courses */}
-      <h3 className="text-primary fw-bold mb-4">Available Trade Courses</h3>
-      {courses.map((course, idx) => (
-        <motion.div
-          key={idx}
-          initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: idx * 0.1 }}
-          className="mb-5"
-        >
-          <Row className="align-items-center">
-            <Col md={4} className="mb-3 mb-md-0">
-              <img src={course.image} alt={course.title} className="img-fluid rounded shadow" />
-            </Col>
-            <Col md={8}>
-              <h4 className="d-flex align-items-center gap-2">
-                {course.icon} {course.title}
-              </h4>
-              <p className="text-muted">{course.description}</p>
-              <ul>
-                {course.studies.map((item, i) => <li key={i}>{item}</li>)}
-              </ul>
-              <p><strong>Duration:</strong> {course.duration}</p>
-              <Button href="/apply" style={{ backgroundColor: "#10B981", border: "none" }}>Apply Now</Button>
-            </Col>
+      {/* PROGRAMS SECTION */}
+      <section className="py-5" style={{ backgroundColor: colors.lightGray }}>
+        <Container>
+          <div className="text-center mb-5">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="fw-bold display-5 mb-3" style={{ color: colors.dark }}>
+                Available Programs
+              </h2>
+              <p className="lead mb-0" style={{ 
+                color: colors.gray,
+                maxWidth: "700px",
+                margin: "0 auto"
+              }}>
+                Practical, hands-on training designed for the African job market
+              </p>
+            </motion.div>
+          </div>
+
+          <Row className="g-4">
+            {programs.map((program, index) => (
+              <Col lg={6} key={index}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <Card className="border-0 shadow-lg h-100 overflow-hidden hover-lift" style={{ 
+                    borderRadius: "16px",
+                    transition: "all 0.3s ease"
+                  }}>
+                    <Row className="g-0">
+                      {/* Program Image */}
+                      <Col md={5}>
+                        <div style={{ 
+                          position: "relative",
+                          height: "100%",
+                          minHeight: "250px",
+                          overflow: "hidden"
+                        }}>
+                          <img 
+                            src={program.image} 
+                            alt={program.title}
+                            className="img-fluid w-100 h-100"
+                            style={{ 
+                              objectFit: "cover",
+                              filter: "brightness(0.8)"
+                            }}
+                          />
+                          <div style={{
+                            position: "absolute",
+                            top: "0",
+                            left: "0",
+                            width: "100%",
+                            height: "100%",
+                            background: `linear-gradient(135deg, ${program.color}80, ${program.color}40)`,
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center"
+                          }}>
+                            <div style={{ 
+                              width: "80px", 
+                              height: "80px", 
+                              backgroundColor: "rgba(255,255,255,0.2)",
+                              backdropFilter: "blur(10px)",
+                              borderRadius: "50%",
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              fontSize: "1.8rem",
+                              color: "white",
+                              border: "2px solid rgba(255,255,255,0.3)"
+                            }}>
+                              {program.icon}
+                            </div>
+                          </div>
+                          
+                          {/* Duration Badge */}
+                          <div className="position-absolute top-3 start-3">
+                            <Badge bg="dark" className="px-3 py-2" style={{ 
+                              backgroundColor: "rgba(0,0,0,0.7)",
+                              fontSize: "0.85rem"
+                            }}>
+                              <FaClock className="me-1" />
+                              {program.duration}
+                            </Badge>
+                          </div>
+                          
+                          {/* Level Badge */}
+                          <div className="position-absolute top-3 end-3">
+                            <Badge bg="light" text="dark" className="px-3 py-2" style={{ fontSize: "0.85rem" }}>
+                              {program.level}
+                            </Badge>
+                          </div>
+                        </div>
+                      </Col>
+                      
+                      {/* Program Details */}
+                      <Col md={7}>
+                        <Card.Body className="p-4">
+                          <div className="d-flex justify-content-between align-items-start mb-3">
+                            <div>
+                              <h4 className="fw-bold mb-1" style={{ color: colors.dark }}>
+                                {program.title}
+                              </h4>
+                              <p className="text-muted small mb-0">
+                                {program.description}
+                              </p>
+                            </div>
+                          </div>
+                          
+                          {/* Topics */}
+                          <div className="mb-3">
+                            <h6 className="fw-semibold mb-2" style={{ color: program.color }}>
+                              <FaBookOpen className="me-2" />
+                              What You'll Learn:
+                            </h6>
+                            <div className="d-flex flex-wrap gap-2 mb-3">
+                              {program.topics.map((topic, idx) => (
+                                <Badge 
+                                  key={idx} 
+                                  bg="light" 
+                                  text="dark"
+                                  className="px-2 py-1"
+                                  style={{ 
+                                    fontSize: "0.75rem",
+                                    border: `1px solid ${program.color}20`
+                                  }}
+                                >
+                                  {topic}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                          
+                          {/* Requirements & Outcome */}
+                          <div className="mb-4">
+                            <Row>
+                              <Col xs={6}>
+                                <h6 className="fw-semibold mb-2 small" style={{ color: colors.gray }}>
+                                  Requirements:
+                                </h6>
+                                <ul className="list-unstyled mb-0">
+                                  {program.requirements.map((req, idx) => (
+                                    <li key={idx} className="mb-1">
+                                      <FaCheckCircle className="me-1" size={10} style={{ color: colors.success }} />
+                                      <small style={{ color: colors.darkGray }}>{req}</small>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </Col>
+                              <Col xs={6}>
+                                <h6 className="fw-semibold mb-2 small" style={{ color: colors.gray }}>
+                                  Outcome:
+                                </h6>
+                                <p className="small mb-0" style={{ color: colors.darkGray }}>
+                                  {program.outcome}
+                                </p>
+                              </Col>
+                            </Row>
+                          </div>
+                          
+                          {/* Price & Apply Button */}
+                          <div className="d-flex justify-content-between align-items-center">
+                            <div>
+                              <span className="text-muted small" style={{ textDecoration: "line-through" }}>
+                                45,000 FRW
+                              </span>
+                              <h5 className="fw-bold mb-0" style={{ color: program.color }}>
+                                30,000 FRW
+                              </h5>
+                            </div>
+                            <Button
+                              href="/apply"
+                              className="rounded-pill px-4"
+                              style={{ 
+                                backgroundColor: program.color, 
+                                border: "none",
+                                fontWeight: "600"
+                              }}
+                            >
+                              <FaRocket className="me-2" />
+                              Apply Now
+                            </Button>
+                          </div>
+                        </Card.Body>
+                      </Col>
+                    </Row>
+                  </Card>
+                </motion.div>
+              </Col>
+            ))}
           </Row>
-        </motion.div>
-      ))}
+        </Container>
+      </section>
 
-      {/* Section 2: Services */}
-      <h3 className="text-primary fw-bold mb-4 mt-5">Offered Services</h3>
-      {services.map((service, idx) => (
-        <motion.div
-          key={idx}
-          initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7, delay: idx * 0.1 }}
-          className="mb-5"
-        >
-          <Row className="align-items-center">
-            <Col md={4} className="mb-3 mb-md-0">
-              <img src={service.image} alt={service.title} className="img-fluid rounded shadow" />
-            </Col>
-            <Col md={8}>
-              <h4 className="d-flex align-items-center gap-2">
-                {service.icon} {service.title}
-              </h4>
-              <p className="text-muted">{service.description}</p>
-              <Button href="/apply" style={{ backgroundColor: "#10B981", border: "none" }}>Apply Now</Button>
-            </Col>
+      {/* ADDITIONAL SERVICES */}
+      <section className="py-5" style={{ backgroundColor: colors.light }}>
+        <Container>
+          <div className="text-center mb-5">
+            <h2 className="fw-bold display-5 mb-3" style={{ color: colors.dark }}>
+              Additional Services
+            </h2>
+            <p className="lead mb-0" style={{ color: colors.gray }}>
+              Beyond training - comprehensive ICT solutions for your needs
+            </p>
+          </div>
+
+          <Row className="g-4">
+            {services.map((service, index) => (
+              <Col lg={3} md={6} key={index}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <Card className="border-0 shadow-sm h-100 text-center" style={{ 
+                    borderRadius: "16px",
+                    borderTop: `4px solid ${service.color}`,
+                    transition: "all 0.3s ease"
+                  }}>
+                    <Card.Body className="p-4">
+                      <div style={{ 
+                        width: "70px", 
+                        height: "70px", 
+                        backgroundColor: `${service.color}15`,
+                        borderRadius: "50%",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontSize: "1.8rem",
+                        color: service.color,
+                        margin: "0 auto 20px"
+                      }}>
+                        {service.icon}
+                      </div>
+                      <h5 className="fw-bold mb-3" style={{ color: colors.dark }}>
+                        {service.title}
+                      </h5>
+                      <p className="text-muted mb-4" style={{ lineHeight: "1.6" }}>
+                        {service.description}
+                      </p>
+                      <div className="mt-auto">
+                        <ul className="list-unstyled mb-3 text-start">
+                          {service.benefits.map((benefit, idx) => (
+                            <li key={idx} className="mb-2">
+                              <FaCheckCircle className="me-2" style={{ color: service.color }} />
+                              <small style={{ color: colors.darkGray }}>{benefit}</small>
+                            </li>
+                          ))}
+                        </ul>
+                        <Button
+                          href="/contact"
+                          variant="outline-primary"
+                          size="sm"
+                          className="rounded-pill px-3"
+                          style={{ 
+                            borderColor: service.color,
+                            color: service.color
+                          }}
+                        >
+                          Learn More
+                        </Button>
+                      </div>
+                    </Card.Body>
+                  </Card>
+                </motion.div>
+              </Col>
+            ))}
           </Row>
-        </motion.div>
-      ))}
+        </Container>
+      </section>
 
-      {/* Ready to Start Section */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="text-center mt-5 py-5"
-        style={{ backgroundColor: "#addcd5", borderRadius: "12px" }}
-      >
-        <h2 style={{ color: "#1E3A8A", fontWeight: "700" }}>Ready To Start Your Journey in Technology?</h2>
-        <p style={{ color: "#14B8A6", fontSize: "1.2rem" }}>
-          <span style={{ textDecoration: "line-through", marginRight: "10px" }}>40000 FRW</span>
-          <span style={{ fontWeight: "700" }}>30000 FRW</span>
-        </p>
-        <Button href="/apply" style={{ backgroundColor: "#10B981", border: "none", padding: "12px 30px", fontSize: "1.1rem" }}>
-          Apply Now
-        </Button>
-      </motion.div>
-    </Container>
+      {/* COMPARISON TABLE */}
+      <section className="py-5" style={{ backgroundColor: colors.lightGray }}>
+        <Container>
+          <div className="text-center mb-5">
+            <h2 className="fw-bold display-5 mb-3" style={{ color: colors.dark }}>
+              Program Comparison
+            </h2>
+            <p className="lead mb-0" style={{ color: colors.gray }}>
+              Choose the right program for your career goals
+            </p>
+          </div>
+
+          <div className="table-responsive">
+            <table className="table table-hover border-0 shadow-sm rounded-3 overflow-hidden">
+              <thead style={{ backgroundColor: colors.primary, color: "white" }}>
+                <tr>
+                  <th className="py-3">Program</th>
+                  <th className="py-3 text-center">Duration</th>
+                  <th className="py-3 text-center">Level</th>
+                  <th className="py-3 text-center">Cost</th>
+                  <th className="py-3 text-center">Job Placement</th>
+                  <th className="py-3 text-center">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {programs.slice(0, 6).map((program, index) => (
+                  <tr key={index} style={{ 
+                    backgroundColor: index % 2 === 0 ? "white" : colors.light 
+                  }}>
+                    <td className="py-3">
+                      <div className="d-flex align-items-center gap-3">
+                        <div style={{ 
+                          width: "40px", 
+                          height: "40px", 
+                          backgroundColor: `${program.color}15`,
+                          borderRadius: "8px",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          fontSize: "1.2rem",
+                          color: program.color
+                        }}>
+                          {program.icon}
+                        </div>
+                        <div>
+                          <strong style={{ color: colors.dark }}>{program.title}</strong>
+                          <small className="d-block text-muted">{program.description.substring(0, 60)}...</small>
+                        </div>
+                      </div>
+                    </td>
+                    <td className="py-3 text-center align-middle">
+                      <Badge bg="light" text="dark" className="px-3 py-2">
+                        {program.duration}
+                      </Badge>
+                    </td>
+                    <td className="py-3 text-center align-middle">
+                      <Badge bg={program.level === "Beginner" ? "success" : program.level === "Intermediate" ? "warning" : "info"}
+                        className="px-3 py-2"
+                      >
+                        {program.level}
+                      </Badge>
+                    </td>
+                    <td className="py-3 text-center align-middle">
+                      <div>
+                        <del className="text-muted small">45,000 FRW</del>
+                        <div className="fw-bold" style={{ color: program.color }}>
+                          30,000 FRW
+                        </div>
+                      </div>
+                    </td>
+                    <td className="py-3 text-center align-middle">
+                      <div className="d-flex align-items-center justify-content-center">
+                        <div className="progress" style={{ width: "80px", height: "6px" }}>
+                          <div className="progress-bar bg-success" style={{ width: "95%" }}></div>
+                        </div>
+                        <small className="ms-2 fw-semibold">95%</small>
+                      </div>
+                    </td>
+                    <td className="py-3 text-center align-middle">
+                      <Button
+                        href="/apply"
+                        size="sm"
+                        className="rounded-pill px-3"
+                        style={{ 
+                          backgroundColor: program.color, 
+                          border: "none",
+                          fontWeight: "600"
+                        }}
+                      >
+                        Apply
+                      </Button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </Container>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="py-5" style={{ 
+        background: `linear-gradient(135deg, ${colors.dark}, ${colors.primary})`
+      }}>
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center text-white"
+          >
+            <h2 className="fw-bold display-5 mb-4">
+              Ready to Transform Your Career?
+            </h2>
+            <p className="lead mb-4 opacity-90" style={{ maxWidth: "700px", margin: "0 auto" }}>
+              Join hundreds of successful graduates with our practical, hands-on ICT training programs
+            </p>
+            
+            {/* Pricing Display */}
+            <div className="d-flex justify-content-center align-items-center mb-4">
+              <div className="text-center me-5">
+                <span style={{ 
+                  textDecoration: "line-through", 
+                  color: colors.secondary,
+                  fontSize: "1.5rem",
+                  fontWeight: "600"
+                }}>
+                  45,000 FRW
+                </span>
+              </div>
+              <div className="text-center">
+                <span style={{ 
+                  fontSize: "3rem", 
+                  fontWeight: "800",
+                  color: "white"
+                }}>
+                  30,000 FRW
+                </span>
+                <div className="mt-1">
+                  <Badge bg="warning" text="dark" className="px-3 py-2">
+                    ⏰ Limited Time Offer
+                  </Badge>
+                </div>
+              </div>
+            </div>
+            
+            {/* Features */}
+            <div className="d-flex justify-content-center flex-wrap gap-4 mb-4">
+              <div className="d-flex align-items-center">
+                <FaCheckCircle className="me-2" style={{ color: colors.success }} />
+                <small>100% Practical Training</small>
+              </div>
+              <div className="d-flex align-items-center">
+                <FaCheckCircle className="me-2" style={{ color: colors.success }} />
+                <small>Certificate Included</small>
+              </div>
+              <div className="d-flex align-items-center">
+                <FaCheckCircle className="me-2" style={{ color: colors.success }} />
+                <small>Job Placement Support</small>
+              </div>
+              <div className="d-flex align-items-center">
+                <FaCheckCircle className="me-2" style={{ color: colors.success }} />
+                <small>Flexible Payment Options</small>
+              </div>
+            </div>
+            
+            {/* CTA Buttons */}
+            <div className="d-flex justify-content-center gap-3">
+              <Button
+                href="/apply"
+                size="lg"
+                className="rounded-pill px-5 py-3"
+                style={{ 
+                  background: `linear-gradient(135deg, ${colors.secondary}, ${colors.warning})`, 
+                  border: "none",
+                  fontWeight: "600"
+                }}
+              >
+                <FaRocket className="me-2" />
+                Apply Now
+              </Button>
+              <Button
+                href="/contact"
+                variant="outline-light"
+                size="lg"
+                className="rounded-pill px-5 py-3"
+              >
+                <FaHandshake className="me-2" />
+                Contact Admissions
+              </Button>
+            </div>
+            
+            {/* Next Intake */}
+            <div className="mt-4">
+              <small className="opacity-75">
+                📅 Next intake starts in 2 weeks • Limited spots available
+              </small>
+            </div>
+          </motion.div>
+        </Container>
+      </section>
+    </>
   );
 };
 

@@ -12,10 +12,7 @@ const programFees = {
   "Networking & Internet Technology (NIT)": 30000,
   "Multimedia Productions (MMP)": 30000,
   "Electronics & Telecommunications (ETE)": 30000,
-  "Electrical Technology (ELT)": 30000,
-  "Teacher Training Program": 30000,
-  "Holiday Program": 30000,
-  "Technical Support & ICT Supply": 30000
+  "Electrical Technology (ELT)": 30000
 };
 
 // POST – Save application

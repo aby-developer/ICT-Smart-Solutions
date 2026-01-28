@@ -26,8 +26,8 @@ const LocationNotification = () => {
       <FaMapMarkerAlt className="location-icon" />
 
       <span>
-        Kigali - Kicukiro Sonatube -{" "}
-        <strong>Inindi House (Former UTB University)</strong>
+        Kigali - Nyarugenge -{" "}
+        <strong>Near Bank Of Kigali HeadQuarter</strong>
       </span>
 
       <button
