@@ -708,6 +708,7 @@ const Contact = () => {
       </section>
 
       {/* FINAL CTA */}
+            {/* FINAL CTA */}
       <section className="py-5" style={{ 
         background: `linear-gradient(135deg, ${colors.dark}, ${colors.primary})`
       }}>
@@ -718,20 +719,26 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             className="text-center text-white"
           >
-            <h2 className="fw-bold display-5 mb-4">
+            <h2 className="fw-bold mb-4" style={{ 
+              fontSize: "clamp(1.75rem, 4vw, 2.5rem)"
+            }}>
               Ready to Start Your Tech Journey?
             </h2>
-            <p className="lead mb-4 opacity-90" style={{ maxWidth: "700px", margin: "0 auto" }}>
+            <p className="mb-4 opacity-90" style={{ 
+              maxWidth: "700px", 
+              margin: "0 auto",
+              fontSize: "clamp(0.95rem, 2vw, 1.25rem)"
+            }}>
               Take the first step towards transforming your career with our practical ICT training programs
             </p>
             
             {/* Pricing Display */}
-            <div className="d-flex justify-content-center align-items-center mb-4">
-              <div className="text-center me-5">
+            <div className="d-flex justify-content-center align-items-center mb-4 flex-column flex-md-row">
+              <div className="text-center me-md-5 mb-3 mb-md-0">
                 <span style={{ 
                   textDecoration: "line-through", 
                   color: colors.secondary,
-                  fontSize: "1.5rem",
+                  fontSize: "clamp(1.1rem, 2.5vw, 1.5rem)",
                   fontWeight: "600"
                 }}>
                   45,000 FRW
@@ -739,7 +746,7 @@ const Contact = () => {
               </div>
               <div className="text-center">
                 <span style={{ 
-                  fontSize: "3rem", 
+                  fontSize: "clamp(2rem, 5vw, 3rem)", 
                   fontWeight: "800",
                   color: "white"
                 }}>
@@ -754,7 +761,7 @@ const Contact = () => {
             </div>
             
             {/* Features */}
-            <div className="d-flex justify-content-center flex-wrap gap-4 mb-4">
+            <div className="d-flex justify-content-center flex-wrap gap-3 mb-4">
               <div className="d-flex align-items-center">
                 <FaCheckCircle className="me-2" style={{ color: colors.success }} />
                 <small>100% Practical Training</small>
@@ -773,16 +780,17 @@ const Contact = () => {
               </div>
             </div>
             
-            {/* CTA Buttons */}
-            <div className="d-flex justify-content-center gap-3">
+            {/* CTA Buttons - Made Responsive */}
+            <div className="d-flex justify-content-center gap-2 gap-md-3 flex-column flex-md-row">
               <Button
                 href="/apply"
                 size="lg"
-                className="rounded-pill px-5 py-3"
+                className="rounded-pill px-4 px-md-5 py-3"
                 style={{ 
                   background: `linear-gradient(135deg, ${colors.secondary}, ${colors.warning})`, 
                   border: "none",
-                  fontWeight: "600"
+                  fontWeight: "600",
+                  fontSize: "clamp(0.875rem, 2vw, 1rem)"
                 }}
               >
                 <FaRocket className="me-2" />
@@ -792,7 +800,8 @@ const Contact = () => {
                 href="tel:+250789402303"
                 variant="outline-light"
                 size="lg"
-                className="rounded-pill px-5 py-3"
+                className="rounded-pill px-4 px-md-5 py-3 mt-2 mt-md-0"
+                style={{ fontSize: "clamp(0.875rem, 2vw, 1rem)" }}
               >
                 <FaPhoneAlt className="me-2" />
                 Call Admissions

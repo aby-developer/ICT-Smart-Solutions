@@ -99,30 +99,6 @@ const programs = [
     outcome: "Electronics technician with practical circuit design skills"
   },
   {
-    title: "Teacher Training Program",
-    icon: <FaChalkboardTeacher />,
-    image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-    description: "Enhance teaching skills with modern ICT tools and effective digital classroom strategies.",
-    topics: ["ICT Pedagogy", "Digital Teaching Tools", "Curriculum Development", "Classroom Management", "Assessment Strategies", "E-Learning Platforms"],
-    duration: "2 Weeks",
-    level: "Professional",
-    color: colors.teal,
-    requirements: ["Teaching experience", "Basic computer skills", "Educational background"],
-    outcome: "ICT-enabled educator with modern teaching methodologies"
-  },
-  {
-    title: "Holiday Tech Program",
-    icon: <FaCalendarAlt />,
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-    description: "Fun and engaging tech exploration for students during school holidays.",
-    topics: ["Basic Coding", "Creative Projects", "Tech Exploration", "Game Development", "Digital Art", "Presentation Skills"],
-    duration: "2 Weeks",
-    level: "Beginner",
-    color: colors.info,
-    requirements: ["Student status", "Curiosity for tech", "No prior experience needed"],
-    outcome: "Digital literacy and foundational tech skills for students"
-  },
-  {
     title: "Technical Support & ICT Supply",
     icon: <FaTools />,
     image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
@@ -207,9 +183,9 @@ const Programs = () => {
               margin: "0 auto",
               opacity: 0.9
             }}>
-              Choose from 8 specialized ICT programs designed for career success and practical skill development
+              Choose from {programs.length} specialized ICT programs designed for career success and practical skill development
             </p>
-            <div className="d-flex justify-content-center gap-3">
+            <div className="d-flex justify-content-center gap-3 flex-wrap">
               <Badge bg="light" text="dark" className="px-3 py-2">
                 <FaUsers className="me-2" />
                 500+ Students Trained
@@ -488,10 +464,11 @@ const Programs = () => {
                           className="rounded-pill px-3"
                           style={{ 
                             borderColor: service.color,
-                            color: service.color
+                            color: service.color,
+                            fontWeight: "600"
                           }}
                         >
-                          Learn More
+                          Contact Us
                         </Button>
                       </div>
                     </Card.Body>
@@ -500,106 +477,6 @@ const Programs = () => {
               </Col>
             ))}
           </Row>
-        </Container>
-      </section>
-
-      {/* COMPARISON TABLE */}
-      <section className="py-5" style={{ backgroundColor: colors.lightGray }}>
-        <Container>
-          <div className="text-center mb-5">
-            <h2 className="fw-bold display-5 mb-3" style={{ color: colors.dark }}>
-              Program Comparison
-            </h2>
-            <p className="lead mb-0" style={{ color: colors.gray }}>
-              Choose the right program for your career goals
-            </p>
-          </div>
-
-          <div className="table-responsive">
-            <table className="table table-hover border-0 shadow-sm rounded-3 overflow-hidden">
-              <thead style={{ backgroundColor: colors.primary, color: "white" }}>
-                <tr>
-                  <th className="py-3">Program</th>
-                  <th className="py-3 text-center">Duration</th>
-                  <th className="py-3 text-center">Level</th>
-                  <th className="py-3 text-center">Cost</th>
-                  <th className="py-3 text-center">Job Placement</th>
-                  <th className="py-3 text-center">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {programs.slice(0, 6).map((program, index) => (
-                  <tr key={index} style={{ 
-                    backgroundColor: index % 2 === 0 ? "white" : colors.light 
-                  }}>
-                    <td className="py-3">
-                      <div className="d-flex align-items-center gap-3">
-                        <div style={{ 
-                          width: "40px", 
-                          height: "40px", 
-                          backgroundColor: `${program.color}15`,
-                          borderRadius: "8px",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          fontSize: "1.2rem",
-                          color: program.color
-                        }}>
-                          {program.icon}
-                        </div>
-                        <div>
-                          <strong style={{ color: colors.dark }}>{program.title}</strong>
-                          <small className="d-block text-muted">{program.description.substring(0, 60)}...</small>
-                        </div>
-                      </div>
-                    </td>
-                    <td className="py-3 text-center align-middle">
-                      <Badge bg="light" text="dark" className="px-3 py-2">
-                        {program.duration}
-                      </Badge>
-                    </td>
-                    <td className="py-3 text-center align-middle">
-                      <Badge bg={program.level === "Beginner" ? "success" : program.level === "Intermediate" ? "warning" : "info"}
-                        className="px-3 py-2"
-                      >
-                        {program.level}
-                      </Badge>
-                    </td>
-                    <td className="py-3 text-center align-middle">
-                      <div>
-                        <del className="text-muted small">45,000 FRW</del>
-                        <div className="fw-bold" style={{ color: program.color }}>
-                          30,000 FRW
-                        </div>
-                      </div>
-                    </td>
-                    <td className="py-3 text-center align-middle">
-                      <div className="d-flex align-items-center justify-content-center">
-                        <div className="progress" style={{ width: "80px", height: "6px" }}>
-                          <div className="progress-bar bg-success" style={{ width: "95%" }}></div>
-                        </div>
-                        <small className="ms-2 fw-semibold">95%</small>
-                      </div>
-                    </td>
-                    <td className="py-3 text-center align-middle">
-                      <Button
-                        href="/apply"
-                        size="sm"
-                        className="rounded-pill px-3"
-                        style={{ 
-                          backgroundColor: program.color, 
-                          border: "none",
-                          fontWeight: "600"
-                        }}
-                      >
-                        Apply
-                      </Button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
         </Container>
       </section>
 
@@ -622,8 +499,8 @@ const Programs = () => {
             </p>
             
             {/* Pricing Display */}
-            <div className="d-flex justify-content-center align-items-center mb-4">
-              <div className="text-center me-5">
+            <div className="d-flex justify-content-center align-items-center mb-4 flex-column flex-md-row">
+              <div className="text-center me-md-5 mb-3 mb-md-0">
                 <span style={{ 
                   textDecoration: "line-through", 
                   color: colors.secondary,
@@ -650,7 +527,7 @@ const Programs = () => {
             </div>
             
             {/* Features */}
-            <div className="d-flex justify-content-center flex-wrap gap-4 mb-4">
+            <div className="d-flex justify-content-center flex-wrap gap-3 mb-4">
               <div className="d-flex align-items-center">
                 <FaCheckCircle className="me-2" style={{ color: colors.success }} />
                 <small>100% Practical Training</small>
@@ -670,11 +547,11 @@ const Programs = () => {
             </div>
             
             {/* CTA Buttons */}
-            <div className="d-flex justify-content-center gap-3">
+            <div className="d-flex justify-content-center gap-3 flex-column flex-md-row">
               <Button
                 href="/apply"
                 size="lg"
-                className="rounded-pill px-5 py-3"
+                className="rounded-pill px-5 py-3 mb-2 mb-md-0"
                 style={{ 
                   background: `linear-gradient(135deg, ${colors.secondary}, ${colors.warning})`, 
                   border: "none",
@@ -693,13 +570,6 @@ const Programs = () => {
                 <FaHandshake className="me-2" />
                 Contact Admissions
               </Button>
-            </div>
-            
-            {/* Next Intake */}
-            <div className="mt-4">
-              <small className="opacity-75">
-                📅 Next intake starts in 2 weeks • Limited spots available
-              </small>
             </div>
           </motion.div>
         </Container>

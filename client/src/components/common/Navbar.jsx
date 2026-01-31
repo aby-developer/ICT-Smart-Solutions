@@ -68,7 +68,7 @@ const AppNavbar = () => {
         backdropFilter: scrolled ? "blur(10px)" : "none",
         borderBottom: scrolled ? `1px solid ${colors.primary}20` : "none",
         transition: "all 0.3s ease",
-        padding: scrolled ? "0.5rem 0" : "0.8rem 0"
+        padding: scrolled ? "0rem 0" : "0.4rem 0"
       }}
       className="shadow-sm"
       variant={darkMode ? "dark" : "light"}

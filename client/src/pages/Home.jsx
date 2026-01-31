@@ -107,26 +107,6 @@ const programs = [
     level: "Intermediate"
   },
   {
-    title: "Teacher Training Program",
-    shortTitle: "Teacher Training",
-    icon: <FaChalkboardTeacher />,
-    image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-    topics: ["ICT Pedagogy", "Digital Tools", "Curriculum Design", "Classroom Tech"],
-    color: colors.teal,
-    duration: "2 Weeks",
-    level: "Professional"
-  },
-  {
-    title: "Holiday Tech Program",
-    shortTitle: "Holiday Program",
-    icon: <FaUmbrellaBeach />,
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
-    topics: ["Basic Coding", "Creative Projects", "Tech Exploration", "Fun Activities"],
-    color: colors.info,
-    duration: "2 Weeks",
-    level: "Beginner"
-  },
-  {
     title: "Technical Support & ICT Supply",
     shortTitle: "Tech Support",
     icon: <FaTools />,
@@ -267,6 +247,8 @@ const Home = () => {
         
         <Container>
           <Row className="align-items-center flex-column-reverse flex-lg-row">
+
+
             <Col lg={6} className={isMobile ? "mt-4" : "mt-lg-0"}>
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
@@ -296,7 +278,7 @@ const Home = () => {
                     <small className="opacity-75">Job Placement</small>
                   </div>
                   <div className="text-center">
-                    <h3 className="fw-bold mb-0" style={{ color: colors.success, fontSize: isMobile ? "1.5rem" : "2rem" }}>8</h3>
+                    <h3 className="fw-bold mb-0" style={{ color: colors.success, fontSize: isMobile ? "1.5rem" : "2rem" }}>6</h3>
                     <small className="opacity-75">Programs</small>
                   </div>
                 </div>
@@ -343,6 +325,8 @@ const Home = () => {
               </motion.div>
             </Col>
 
+
+
             <Col lg={6} className={isMobile ? "mt-4" : "mt-lg-0"}>
               <motion.div
                 initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
@@ -351,7 +335,7 @@ const Home = () => {
                 className="position-relative"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                  src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
                   alt="ICT Smart Solutions - Technology Training Center"
                   className="img-fluid rounded-4 shadow-lg w-100"
                   style={{ 
@@ -479,7 +463,7 @@ const Home = () => {
               Our Training Programs
             </h2>
             <p className={`lead ${isMobile ? "small" : ""}`} style={{ color: colors.gray }}>
-              Choose from 8 specialized ICT programs designed for career success
+              Choose from 6 specialized ICT programs designed for career success
             </p>
           </div>
 
@@ -614,7 +598,7 @@ const Home = () => {
                         </span>
                         <Button
                           as={Link}
-                          to={`/program/${index + 1}`}
+                          to="/apply"
                           size="sm"
                           className="rounded-pill px-3 py-2"
                           style={{ 
@@ -625,7 +609,7 @@ const Home = () => {
                             fontSize: "0.875rem"
                           }}
                         >
-                          Learn More
+                          Apply Now
                         </Button>
                       </div>
                     </Card.Body>
@@ -668,7 +652,7 @@ const Home = () => {
           <div className="text-center mt-4">
             <Button
               as={Link}
-              to="/programs"
+              to="/apply"
               variant="outline-primary"
               size="lg"
               className={`rounded-pill ${isMobile ? "w-100 py-3" : "px-5 py-3"}`}
@@ -680,7 +664,7 @@ const Home = () => {
                 fontSize: "1rem"
               }}
             >
-              View All Programs
+              Apply to Our Programs
             </Button>
           </div>
         </Container>
@@ -1023,7 +1007,7 @@ const Home = () => {
               <Col md={4} className="text-md-end mt-3 mt-md-0">
                 <Button
                   as={Link}
-                  to="/partnerships"
+                  to="/contact"
                   variant="outline-primary"
                   size={isMobile ? "sm" : "md"}
                   className="rounded-pill"

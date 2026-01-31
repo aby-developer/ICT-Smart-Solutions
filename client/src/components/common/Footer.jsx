@@ -124,7 +124,7 @@ const Footer = () => {
               <li><Link to="/apply" className="footer-highlight-link">
                 <FaRocket style={{ color: colors.secondary }} /> Apply Now
               </Link></li>
-              <li><Link to="/faq"><FaBolt style={{ color: colors.warning }} /> FAQ</Link></li>
+              {/* <li><Link to="/faq"><FaBolt style={{ color: colors.warning }} /> FAQ</Link></li> */}
             </ul>
           </div>
 
@@ -161,24 +161,7 @@ const Footer = () => {
 
           {/* COLUMN 4 – NEWSLETTER */}
           <div className="footer-col footer-newsletter-col">
-            <h4 className="footer-col-title">Stay Updated</h4>
-            <p className="newsletter-description">
-              Subscribe to our newsletter for the latest updates on programs, events, and tech insights.
-            </p>
             
-            <div className="newsletter-form">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="newsletter-input"
-              />
-              <button 
-                className="newsletter-btn"
-                style={{ background: `linear-gradient(135deg, ${colors.secondary}, ${colors.warning})` }}
-              >
-                Subscribe
-              </button>
-            </div>
 
             {/* Developer Info */}
             <div className="footer-developer">

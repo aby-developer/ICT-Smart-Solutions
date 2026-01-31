@@ -684,6 +684,7 @@ const Apply = () => {
       </section>
 
       {/* FINAL CTA */}
+            {/* FINAL CTA */}
       <section className="py-5" style={{ 
         background: `linear-gradient(135deg, ${colors.dark}, ${colors.primary})`
       }}>
@@ -694,22 +695,30 @@ const Apply = () => {
             transition={{ duration: 0.6 }}
             className="text-center text-white"
           >
-            <h2 className="fw-bold display-5 mb-4">
+            <h2 className="fw-bold mb-4" style={{ 
+              fontSize: "clamp(1.75rem, 4vw, 2.5rem)"
+            }}>
               Ready to Start Your Journey?
             </h2>
-            <p className="lead mb-4 opacity-90" style={{ maxWidth: "700px", margin: "0 auto" }}>
+            <p className="mb-4 opacity-90" style={{ 
+              maxWidth: "700px", 
+              margin: "0 auto",
+              fontSize: "clamp(0.95rem, 2vw, 1.25rem)"
+            }}>
               Don't miss the opportunity to transform your career with hands-on ICT training
             </p>
             
-            <div className="d-flex justify-content-center gap-3">
+            {/* CTA Buttons - Made Responsive */}
+            <div className="d-flex justify-content-center gap-2 gap-md-3 flex-column flex-md-row">
               <Button
                 href="/apply"
                 size="lg"
-                className="rounded-pill px-5 py-3"
+                className="rounded-pill px-4 px-md-5 py-3"
                 style={{ 
                   background: `linear-gradient(135deg, ${colors.secondary}, ${colors.warning})`, 
                   border: "none",
-                  fontWeight: "600"
+                  fontWeight: "600",
+                  fontSize: "clamp(0.875rem, 2vw, 1rem)"
                 }}
               >
                 <FaRocket className="me-2" />
@@ -719,21 +728,12 @@ const Apply = () => {
                 href="tel:+250789402303"
                 variant="outline-light"
                 size="lg"
-                className="rounded-pill px-5 py-3"
+                className="rounded-pill px-4 px-md-5 py-3 mt-2 mt-md-0"
+                style={{ fontSize: "clamp(0.875rem, 2vw, 1rem)" }}
               >
                 <FaPhoneAlt className="me-2" />
                 Call Admissions
               </Button>
-            </div>
-            
-            {/* Next Intake */}
-            <div className="mt-4">
-              <Badge bg="warning" text="dark" className="px-3 py-2 me-2">
-                📅 Next intake: In 2 weeks
-              </Badge>
-              <Badge bg="danger" className="px-3 py-2">
-                ⏰ Limited spots remaining
-              </Badge>
             </div>
           </motion.div>
         </Container>
