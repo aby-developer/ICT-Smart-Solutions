@@ -26,6 +26,8 @@ import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import { useState } from "react";
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 // Use the same color scheme
 const colors = {
   primary: "#1A56DB",     // Modern Blue
@@ -64,7 +66,7 @@ const Contact = () => {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/messages", {
+      const res = await fetch(`${apiUrl}/api/messages`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

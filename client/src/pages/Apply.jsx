@@ -33,6 +33,8 @@ import {
   FaUmbrellaBeach
 } from "react-icons/fa";
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 // Use the same color scheme
 const colors = {
   primary: "#1A56DB",     // Modern Blue
@@ -123,7 +125,7 @@ const Apply = () => {
     setAlert({ show: false, message: "", variant: "" });
 
     try {
-      const res = await axios.post("http://localhost:5000/api/applications", formData);
+      const res = await axios.post(`${apiUrl}/api/applications`, formData);
       setAlert({ show: true, message: res.data.message, variant: "success" });
       setFormData({ 
         fullName: "", 

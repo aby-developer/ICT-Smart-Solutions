@@ -26,6 +26,8 @@ import {
 import AppNavbar from "../../components/common/Navbar";
 import Footer from "../../components/common/Footer";
 
+const apiUrl = import.meta.env.VITE_API_URL;
+
 // Use the same color scheme
 const colors = {
   primary: "#1A56DB",     // Modern Blue
@@ -79,7 +81,7 @@ const AdminLogin = () => {
     try {
       setLoading(true);
       const { data } = await axios.post(
-        "http://localhost:5000/api/admin/login",
+        `${apiUrl}/api/admin/login`,
         { email, password }
       );
 
