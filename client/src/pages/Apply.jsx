@@ -584,11 +584,11 @@ const Apply = () => {
                         Call our admissions team for assistance
                       </p>
                       <a 
-                        href="tel:+250789402303" 
+                        href="tel:+250788467037" 
                         className="fw-bold"
                         style={{ color: colors.primary, textDecoration: "none", fontSize: "1.1rem" }}
                       >
-                        +250 789 402 303
+                        +250 788 467 037
                       </a>
                     </div>
                   </Card.Body>
@@ -727,7 +727,7 @@ const Apply = () => {
                 Apply Now
               </Button>
               <Button
-                href="tel:+250789402303"
+                href="tel:+250788467037"
                 variant="outline-light"
                 size="lg"
                 className="rounded-pill px-4 px-md-5 py-3 mt-2 mt-md-0"
