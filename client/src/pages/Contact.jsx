@@ -99,8 +99,8 @@ const Contact = () => {
     {
       icon: <FaPhoneAlt />,
       title: "Call Us",
-      info: "+250 789 402 303",
-      link: "tel:+250789402303",
+      info: "+250 788 467 037",
+      link: "tel:+250788467037",
       color: colors.success,
       description: "Available Mon-Fri, 8AM-5PM"
     },
@@ -115,8 +115,8 @@ const Contact = () => {
     {
       icon: <FaEnvelope />,
       title: "Email",
-      info: "info@ictsmartsolutions.com",
-      link: "mailto:info@ictsmartsolutions.com",
+      info: "abyzone01@gmail.com",
+      link: "mailto:abyzone01@gmail.com",
       color: colors.accent,
       description: "24/7 email support"
     },
@@ -298,7 +298,7 @@ const Contact = () => {
 
                     <Alert variant="info" className="mb-4">
                       <FaHeadset className="me-2" />
-                      <strong>Need immediate assistance?</strong> Call us at +250 789 402 303
+                      <strong>Need immediate assistance?</strong> Call us at +250 788 467 037
                     </Alert>
 
                     <Form onSubmit={sendMessage}>
@@ -507,7 +507,7 @@ const Contact = () => {
                     <div className="row g-3">
                       <Col xs={6}>
                         <a 
-                          href="https://instagram.com/ictsmartsolutions" 
+                          href="https://www.instagram.com/ictsmartsolution90/" 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="d-flex align-items-center gap-2 p-3 rounded-3 text-decoration-none"
@@ -587,7 +587,7 @@ const Contact = () => {
                       
                       <Col xs={6}>
                         <a 
-                          href="https://wa.me/250789402303" 
+                          href="https://wa.me/250788467037" 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="d-flex align-items-center gap-2 p-3 rounded-3 text-decoration-none"
@@ -799,7 +799,7 @@ const Contact = () => {
                 Apply Now
               </Button>
               <Button
-                href="tel:+250789402303"
+                href="tel:+250788467037"
                 variant="outline-light"
                 size="lg"
                 className="rounded-pill px-4 px-md-5 py-3 mt-2 mt-md-0"
