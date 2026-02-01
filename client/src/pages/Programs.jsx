@@ -20,6 +20,8 @@ import {
   FaCertificate
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 
 // Use the same color scheme
 const colors = {
@@ -379,7 +381,8 @@ const Programs = () => {
                               </h5>
                             </div>
                             <Button
-                              href="/apply"
+                            as={Link}
+                              to="/apply"
                               className="rounded-pill px-4"
                               style={{ 
                                 backgroundColor: program.color, 
@@ -549,7 +552,8 @@ const Programs = () => {
             {/* CTA Buttons */}
             <div className="d-flex justify-content-center gap-3 flex-column flex-md-row">
               <Button
-                href="/apply"
+              as={Link}
+                to="/apply"
                 size="lg"
                 className="rounded-pill px-5 py-3 mb-2 mb-md-0"
                 style={{ 

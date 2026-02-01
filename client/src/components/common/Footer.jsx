@@ -69,11 +69,11 @@ const Footer = () => {
             <div className="footer-contact-info">
               <div className="contact-item">
                 <FaPhoneAlt style={{ color: colors.secondary }} />
-                <span>+250 789 402 303</span>
+                <span>+250 788 467 037</span>
               </div>
               <div className="contact-item">
                 <FaEnvelope style={{ color: colors.accent }} />
-                <span>info@ictsmartsolutions.com</span>
+                <span>niyolivier90@gmail.com</span>
               </div>
               <div className="contact-item">
                 <FaMapMarkerAlt style={{ color: colors.success }} />
@@ -85,11 +85,11 @@ const Footer = () => {
             <div className="footer-socials">
               <h4>Connect With Us</h4>
               <div className="social-icons">
-                <a href="https://wa.me/250789402303" target="_blank" rel="noopener noreferrer" 
+                <a href="https://wa.me/250788467037" target="_blank" rel="noopener noreferrer" 
                    style={{ backgroundColor: "#25D366" }}>
                   <FaWhatsapp />
                 </a>
-                <a href="https://instagram.com/ictsmartsolutions" target="_blank" rel="noopener noreferrer"
+                <a href="https://instagram.com/ictsmartsolution90" target="_blank" rel="noopener noreferrer"
                    style={{ background: "linear-gradient(45deg, #405DE6, #E1306C)" }}>
                   <FaInstagram />
                 </a>

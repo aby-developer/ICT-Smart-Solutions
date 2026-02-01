@@ -785,7 +785,8 @@ const Contact = () => {
             {/* CTA Buttons - Made Responsive */}
             <div className="d-flex justify-content-center gap-2 gap-md-3 flex-column flex-md-row">
               <Button
-                href="/apply"
+              as={Link}
+                to="/apply"
                 size="lg"
                 className="rounded-pill px-4 px-md-5 py-3"
                 style={{ 

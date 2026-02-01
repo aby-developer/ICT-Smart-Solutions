@@ -1,4 +1,5 @@
 import { Container, Row, Col, Button, Card, Badge } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { 
   FaLaptopCode, 
   FaNetworkWired, 
@@ -27,6 +28,7 @@ import {
   FaGlobeAfrica
 } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 // Use the same color scheme
 const colors = {
@@ -164,8 +166,8 @@ const About = () => {
                 Our Programs
               </Button>
               <Button
-                as="a"
-                href="/apply"
+                as={Link}
+                to="/apply"
                 className="rounded-pill px-3 px-md-4 py-2 d-flex align-items-center gap-2"
                 style={{ 
                   backgroundColor: colors.secondary, 
@@ -366,8 +368,8 @@ const About = () => {
                         {course.description}
                       </p>
                       <Button
-                        as="a"
-                        href="/apply"
+                        as={Link}
+                        to="/apply"
                         variant="outline-primary"
                         size="sm"
                         className="w-100 rounded-pill py-2"
@@ -434,8 +436,8 @@ const About = () => {
                         {service.description}
                       </p>
                       <Button
-                        as="a"
-                        href="/contact"
+                        as={Link}
+                        to="/contact"
                         variant="outline-secondary"
                         size="sm"
                         className="rounded-pill px-3"
@@ -1036,7 +1038,8 @@ const About = () => {
             </p>
             <div className="d-flex justify-content-center gap-2 gap-md-3 flex-column flex-md-row">
               <Button
-                href="/apply"
+              as={Link}
+                to="/apply"
                 size="lg"
                 className="rounded-pill px-4 px-md-5 py-3"
                 style={{ 
@@ -1050,7 +1053,9 @@ const About = () => {
                 Apply Now
               </Button>
               <Button
-                href="/contact"
+
+              as={Link}
+                to="/contact"
                 variant="outline-light"
                 size="lg"
                 className="rounded-pill px-4 px-md-5 py-3 mt-2 mt-md-0"
