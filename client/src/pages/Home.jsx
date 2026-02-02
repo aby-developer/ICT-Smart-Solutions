@@ -884,7 +884,7 @@ const Home = () => {
             </div>
             
             <p className="opacity-75 mb-4" style={{ fontSize: isMobile ? "0.9rem" : "1rem" }}>
-              ⏰ Limited spots available for next intake • 📅 Next session starts in 2 weeks
+              ⏰ Limited spots available for next intake 
             </p>
             
             {/* CTA Buttons */}
