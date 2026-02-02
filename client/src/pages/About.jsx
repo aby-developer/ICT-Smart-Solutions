@@ -157,7 +157,7 @@ const About = () => {
             <div className="d-flex justify-content-center gap-3 flex-wrap mt-4">
               <Button
                 as={Link}
-                to="#programs"
+                to="/programs"
                 variant="outline-light"
                 className="rounded-pill px-3 px-md-4 py-2 d-flex align-items-center gap-2"
                 style={{ fontSize: "clamp(0.875rem, 2vw, 1rem)" }}
