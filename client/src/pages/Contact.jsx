@@ -25,6 +25,10 @@ import {
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
+// API URL from environment variables
+
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
